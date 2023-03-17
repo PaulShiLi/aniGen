@@ -1,17 +1,17 @@
 {
     "repos": {
         "hakurei/waifu-diffusion": {
-            "installed": true,
+            "installed": false,
             "revision": "fp16"
         },
         "andite/anything-v4.0": {
-            "installed": true
+            "installed": false
         },
         "andite/pastel-mix": {
-            "installed": true
+            "installed": false
         },
         "WarriorMama777/AbyssOrangeMix": {
-            "installed": true
+            "installed": false
         }
     },
     "device": "cuda",
