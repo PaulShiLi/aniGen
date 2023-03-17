@@ -87,9 +87,9 @@ class load:
 
     def model(modelId: str, revision: str):
         if revision != None:
-            return StableDiffusionPipeline.from_pretrained(modelId, torch_dtype=torch.float16, cache_dir=os.path.join(parent_dir, "models"))
-        else:
             return StableDiffusionPipeline.from_pretrained(modelId, torch_dtype=torch.float16, cache_dir=os.path.join(parent_dir, "models"), revision=revision)
+        else:
+            return StableDiffusionPipeline.from_pretrained(modelId, torch_dtype=torch.float16, cache_dir=os.path.join(parent_dir, "models"))
     
     def promptParse(prompt: str):
         if (os.sep in prompt and prompt != ""):
@@ -128,7 +128,8 @@ class load:
             torch.cuda.empty_cache()
             device = "cpu"
             pipeline = load.model(modelId)
-            pipeline = pipeline.to(device)
+            pipeline = pipeline.to(device) 
+            
             with torch.autocast(device):
                 images = pipeline([prompt] * size, guidance_scale=guidance_scale)
         remove_punctuation_map = dict((ord(char), None) for char in '\/*?:"<>|')

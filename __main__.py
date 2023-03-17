@@ -6,7 +6,7 @@ import subprocess
 import time
 
 from utils.info import PATH, SETTINGS, vs
-from pkgs.hugging import load
+from pkgs.hugging import load, hug
 from pkgs.exceptions import InvalidPath
 
 # python .\aniGen\ run -p "Remilia Scarlet, blue hair, masterpiece, best quality, blue hair, looking at viewer" -cfg -1
@@ -50,6 +50,7 @@ class funcs:
 
 
 def main():
+    hug.checkModels()
     defaultModel = [repoId
             for repoId in SETTINGS["repos"].keys()
             if SETTINGS["repos"][repoId]["installed"] == True]

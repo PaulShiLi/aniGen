@@ -12,6 +12,12 @@
         },
         "WarriorMama777/AbyssOrangeMix": {
             "installed": false
+        },
+        "WarriorMama777/AbyssOrangeMix2": {
+            "installed": false
+        },
+        "WarriorMama777/ElyOrangeMix": {
+            "installed": false
         }
     },
     "device": "cuda",

@@ -1,3 +1,5 @@
 /hugEnv
-/pycache/*
+**/__pycache__
 /models/models--*
+/models/tmp*
+res/settings.json
