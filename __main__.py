@@ -50,6 +50,14 @@ class funcs:
 
 
 def main():
+    defaultModel = [repoId
+            for repoId in SETTINGS["repos"].keys()
+            if SETTINGS["repos"][repoId]["installed"] == True]
+    if len(defaultModel) == 0:
+        defaultModel = "None"
+    else:
+        defaultModel = defaultModel[0]
+    
     parser = argparse.ArgumentParser(
         prog=f"python .{os.sep}{Path(__file__).resolve().parent.name}",
         usage="%(prog)s [options]",
@@ -76,11 +84,7 @@ def main():
         (default: %(default)s)
         """,
         required=False,
-        default=[
-            repoId
-            for repoId in SETTINGS["repos"].keys()
-            if SETTINGS["repos"][repoId]["installed"] == True
-        ][0],
+        default=defaultModel,
         action="store",
         type=str,
         choices=[
