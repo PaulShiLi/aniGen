@@ -62,7 +62,7 @@ class hug:
         for indice in modelIndices:
             print("Downloading model " + keys[indice] + "...")
             if "revision" in SETTINGS["repos"][keys[indice]].keys():
-                revision = SETTINGS["repos"][keys]["revision"]
+                revision = SETTINGS["repos"][keys[indice]]["revision"]
             else:
                 revision = None
             if revision != None:
